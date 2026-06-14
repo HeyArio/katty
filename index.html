@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katayoun Parmar — Filmmaker &amp; Director</title>
+  <meta name="description" content="Katayoun Parmar — Iranian filmmaker and director based in Paris. Six short films across Tehran and France, selected in 50+ festivals worldwide.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Archivo:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js (animated film-grain background) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/background.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Animated WebGL background (projector glow + drifting film dust) -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <span id="top"></span>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav">
+      <a href="#top" class="nav__brand">Katayoun&nbsp;Parmar</a>
+      <div class="nav__links">
+        <a href="#films">Films</a>
+        <a href="#about">About</a>
+        <a href="#awards">Awards</a>
+        <a href="#studio">Studio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">Réalisatrice · Filmmaker &amp; Director</p>
+        <h1 class="hero__title">Katayoun<br><em>Parmar</em></h1>
+        <p class="hero__lede">An Iranian director based in Paris, working between Tehran and France. Six short films selected in more than fifty festivals worldwide — and a new studio built with her brother.</p>
+        <div class="hero__actions">
+          <a href="#films" class="link-ember">View films</a>
+          <a href="#contact" class="link-dim">Contact</a>
+        </div>
+      </div>
+      <figure class="hero__media">
+        <img src="assets/portrait-bw.jpg" alt="Portrait of Katayoun Parmar">
+        <figcaption>Paris · 2026</figcaption>
+      </figure>
+    </header>
+
+    <!-- ============ MARQUEE (French / festival band) ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__group">
+          <em>Cinéaste</em><b>✦</b><em>Réalisatrice</em><b>✦</b><em>Paris</em><b>✦</b><em>Téhéran</em><b>✦</b><em>Sélection Officielle</em><b>✦</b><em>Nouvelle Écriture</em><b>✦</b>
+        </span>
+        <span class="marquee__group">
+          <em>Cinéaste</em><b>✦</b><em>Réalisatrice</em><b>✦</b><em>Paris</em><b>✦</b><em>Téhéran</em><b>✦</b><em>Sélection Officielle</em><b>✦</b><em>Nouvelle Écriture</em><b>✦</b>
+        </span>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============ FILMS ============ -->
+      <section id="films" class="section section--films">
+        <div class="wrap">
+          <div class="section__head" data-reveal>
+            <h2 class="section__title">Selected Films</h2>
+            <p class="mono-meta">Six shorts · 2017—2026</p>
+          </div>
+
+          <!-- Featured -->
+          <a class="feature" href="#gallery" data-reveal>
+            <img src="assets/lachasse-dinner.jpg" alt="Still from La Chasse">
+            <span class="feature__tag">Latest</span>
+            <div class="feature__caption">
+              <div>
+                <h3 class="feature__title">La Chasse</h3>
+                <p class="mono-meta">Director · France</p>
+              </div>
+              <span class="feature__year">2026</span>
+            </div>
+          </a>
+
+          <!-- Index of the rest -->
+          <ul class="filmlist">
+            <li class="filmlist__row">
+              <span class="filmlist__num">02</span>
+              <div class="filmlist__main"><h3>Life, a short take</h3><span class="mono-meta">Short · Iran</span></div>
+              <span class="filmlist__year">2023</span>
+            </li>
+            <li class="filmlist__row">
+              <span class="filmlist__num">03</span>
+              <div class="filmlist__main"><h3>Yellow Line</h3><span class="mono-meta">Short · Iran</span></div>
+              <span class="filmlist__year">2022</span>
+            </li>
+            <li class="filmlist__row">
+              <span class="filmlist__num">04</span>
+              <div class="filmlist__main"><h3>You're Still Here</h3><span class="mono-meta">Short · Iran</span></div>
+              <span class="filmlist__year">2019</span>
+            </li>
+            <li class="filmlist__row">
+              <span class="filmlist__num">05</span>
+              <div class="filmlist__main"><h3>Barcelona</h3><span class="mono-meta">Short · Iran</span></div>
+              <span class="filmlist__year">2018</span>
+            </li>
+            <li class="filmlist__row">
+              <span class="filmlist__num">06</span>
+              <div class="filmlist__main"><h3>Keshand</h3><span class="mono-meta">Short · Iran</span></div>
+              <span class="filmlist__year">2017</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section section--about">
+        <div class="wrap about__grid">
+          <div class="about__media" data-reveal>
+            <div class="about__photo">
+              <img src="assets/katty-camera.jpg" alt="Katayoun Parmar on set">
+            </div>
+            <p class="caption">On set · La Chasse, Paris 2026</p>
+          </div>
+          <div class="about__body">
+            <p class="eyebrow" data-reveal>About</p>
+            <p class="about__lead" data-reveal>Katayoun Parmar is an Iranian director based in Paris, working between Tehran and France in a quiet, observational register.</p>
+            <p class="about__para" data-reveal>She studied cinema and audiovisual arts at Master 2 level at Université Paris 1 Panthéon-Sorbonne, after a bachelor's at the University of Art in Tehran. She has directed six short films selected in more than fifty international festivals, and collaborated with MK2 Curiosity on one of her projects. In 2025 she founded the production studio Sibling Story in Tehran with her brother, Keyvan Parmar.</p>
+
+            <div class="about__cols" data-reveal>
+              <div>
+                <p class="col-label">Craft</p>
+                <ul class="plainlist">
+                  <li>Directing</li><li>Screenwriting</li><li>Editing</li><li>Cinematography</li><li>Photography &amp; Videography</li>
+                </ul>
+              </div>
+              <div>
+                <p class="col-label">Also</p>
+                <ul class="plainlist plainlist--dim">
+                  <li>Set Decorator — <span>Soulless</span> (2023)</li>
+                  <li>Selection committee — Tehran Int'l Short Film Festival (2021)</li>
+                  <li>Cinema teacher — Manzoumeh Kherad Institute (2018—2022)</li>
+                  <li>Member — Iranian Short Film Association (ISFA)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="about__facts" data-reveal>
+              <div>
+                <p class="col-label">Education</p>
+                <p class="fact">MA Cinema &amp; Audiovisual — Paris 1 Panthéon-Sorbonne, 2024—26<br>BA Cinema — University of Art, Tehran, 2014—18</p>
+              </div>
+              <div>
+                <p class="col-label">Languages</p>
+                <p class="fact">Persian · French · English</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AWARDS & FESTIVALS ============ -->
+      <section id="awards" class="section section--awards">
+        <div class="wrap">
+          <div class="awards__head" data-reveal>
+            <p class="eyebrow">Recognition</p>
+            <p class="awards__big"><em>50+</em> festivals worldwide</p>
+          </div>
+          <div class="awards__grid">
+            <div data-reveal>
+              <p class="col-label">Awards</p>
+              <div class="award"><span class="award__n">i</span><div><p class="award__title">Best Narrative Short</p><p class="mono-meta">Milestone Worldwide Film Festival</p></div></div>
+              <div class="award"><span class="award__n">ii</span><div><p class="award__title">Special Grand Prize</p><p class="mono-meta">Nahia Film Fest</p></div></div>
+              <div class="award"><span class="award__n">iii</span><div><p class="award__title">Best Cinematography</p><p class="mono-meta">Canberra Short Film Festival</p></div></div>
+              <div class="award"><span class="award__n">iv</span><div><p class="award__title">Best Editing</p><p class="mono-meta">Tehran Int'l Short Film Festival</p></div></div>
+              <div class="award"><span class="award__n">v</span><div><p class="award__title">Young Talent Award</p><p class="mono-meta">Tehran Int'l Short Film Festival</p></div></div>
+              <div class="award"><span class="award__n">vi</span><div><p class="award__title">Best Short Film</p><p class="mono-meta">Three Acts of Goodness Micro Film Festival</p></div></div>
+            </div>
+            <div data-reveal>
+              <p class="col-label">Selected Festivals</p>
+              <ul class="festlist">
+                <li>Mill Valley Film Festival</li>
+                <li>Newport Beach Film Festival</li>
+                <li>Women Make Waves Int'l Film Festival</li>
+                <li>Tehran Int'l Short Film Festival</li>
+                <li>Canberra Short Film Festival</li>
+                <li>National Film Festival for Talented Youth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SIBLING STORY ============ -->
+      <section id="studio" class="section section--studio">
+        <div class="wrap studio__grid">
+          <div data-reveal>
+            <p class="eyebrow">The Studio · Est. 2025</p>
+            <h2 class="studio__title">Sibling<br><em>Story</em></h2>
+            <p class="studio__para">A production studio founded in Tehran in 2025 with her brother, Keyvan Parmar — a home for the films the two of them want to make, and the filmmakers they want to make them with.</p>
+            <div class="studio__tags"><span>Production</span><span>Development</span><span>Tehran · Paris</span></div>
+          </div>
+          <figure class="studio__media" data-reveal>
+            <img src="assets/ysh-trio.jpg" alt="On set with the Sibling Story team">
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ GALLERY ============ -->
+      <section id="gallery" class="section section--gallery">
+        <div class="wrap-wide">
+          <div class="section__head" data-reveal>
+            <h2 class="section__title">Behind the Scenes</h2>
+            <p class="mono-meta">From the monitor</p>
+          </div>
+          <div class="masonry">
+            <figure data-reveal><img src="assets/cinema-silhouette.jpg" alt="You're Still Here, behind the scenes" loading="lazy"><figcaption>You're Still Here · 2018 · ph. Shauheen Daneshfar</figcaption></figure>
+            <figure data-reveal><img src="assets/katty-camera.jpg" alt="Behind the camera" loading="lazy"><figcaption>La Chasse · 2026 · behind the camera</figcaption></figure>
+            <figure data-reveal><img src="assets/ysh-window.jpg" alt="On the monitor" loading="lazy"><figcaption>You're Still Here · on the monitor</figcaption></figure>
+            <figure data-reveal><img src="assets/lachasse-dinner.jpg" alt="La Chasse, dinner scene" loading="lazy"><figcaption>La Chasse · 2026 · Paris</figcaption></figure>
+            <figure data-reveal><img src="assets/ysh-still.jpg" alt="The take" loading="lazy"><figcaption>You're Still Here · the take</figcaption></figure>
+            <figure data-reveal><img src="assets/ysh-trio.jpg" alt="Direction" loading="lazy"><figcaption>You're Still Here · direction</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section section--contact">
+        <div class="contact__inner">
+          <p class="eyebrow" data-reveal>Contact</p>
+          <h2 class="contact__title" data-reveal>Let's make<br><em>something.</em></h2>
+          <a class="contact__email" href="mailto:Katayounparmar@gmail.com" data-reveal>Katayounparmar@gmail.com</a>
+          <div class="contact__meta" data-reveal>
+            <span>+33 7 69 49 07 02</span>
+            <span>Ivry-sur-Seine · Paris</span>
+          </div>
+        </div>
+        <footer class="footer">
+          <span>Katayoun Parmar — Cinéaste</span>
+          <span>© 2026 · Paris / Tehran</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
