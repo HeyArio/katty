@@ -81,65 +81,96 @@
             <p class="mono-meta">Six shorts · 2017—2026</p>
           </div>
 
-          <!-- Featured -->
-          <button class="feature" type="button" data-reveal data-trailer="1160206129" data-film="La Chasse">
-            <img src="assets/La Chasse.jpg" alt="Poster for La Chasse">
-            <span class="feature__tag">Latest</span>
-            <span class="feature__play" aria-hidden="true">▶</span>
-            <div class="feature__caption">
-              <div>
-                <h3 class="feature__title">La Chasse</h3>
-                <p class="mono-meta">Director · France · Watch trailer</p>
-              </div>
-              <span class="feature__year">2026</span>
-            </div>
-          </button>
+          <!-- Gallery: big stage + thumbnail navigator (kept in sync) -->
+          <div class="gallery" data-reveal>
 
-          <!-- Poster carousel -->
-          <div class="carousel" data-reveal>
-            <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous posters">‹</button>
-            <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next posters">›</button>
-            <div class="carousel__track" id="poster-track">
-            <button class="poster" type="button" data-trailer="794562272" data-film="Life, a short take">
-              <img src="assets/Life a Short Take.jpg" alt="Poster for Life, a short take" loading="lazy">
-              <span class="poster__play" aria-hidden="true">▶</span>
-              <div class="poster__meta">
-                <h3 class="poster__title">Life, a short take</h3>
-                <span class="mono-meta">Short · Iran · 2023</span>
+            <!-- Big stage -->
+            <div class="gallery__stage">
+              <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous film">‹</button>
+              <button class="gallery__nav gallery__nav--next" type="button" aria-label="Next film">›</button>
+              <div class="gallery__track" id="feature-track">
+                <button class="feature" type="button" data-trailer="1160206129" data-film="La Chasse">
+                  <img src="assets/La Chasse.jpg" alt="Poster for La Chasse">
+                  <span class="feature__tag">Latest</span>
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">La Chasse</h3><p class="mono-meta">Director · France · Watch trailer</p></div>
+                    <span class="feature__year">2026</span>
+                  </div>
+                </button>
+                <button class="feature" type="button" data-trailer="794562272" data-film="Life, a short take">
+                  <img src="assets/Life a Short Take.jpg" alt="Poster for Life, a short take">
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">Life, a short take</h3><p class="mono-meta">Short · Iran · Watch trailer</p></div>
+                    <span class="feature__year">2023</span>
+                  </div>
+                </button>
+                <button class="feature" type="button" data-trailer="766239870" data-film="Yellow Line">
+                  <img src="assets/yellow line.jpg" alt="Poster for Yellow Line">
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">Yellow Line</h3><p class="mono-meta">Short · Iran · Watch trailer</p></div>
+                    <span class="feature__year">2022</span>
+                  </div>
+                </button>
+                <button class="feature" type="button" data-trailer="338254113" data-film="You're Still Here">
+                  <img src="assets/you are still here.jpg" alt="Poster for You're Still Here">
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">You're Still Here</h3><p class="mono-meta">Short · Iran · Watch trailer</p></div>
+                    <span class="feature__year">2019</span>
+                  </div>
+                </button>
+                <button class="feature" type="button" data-trailer="794381004" data-film="Barcelona">
+                  <img src="assets/barcelona.jpg" alt="Poster for Barcelona">
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">Barcelona</h3><p class="mono-meta">Short · Iran · Watch trailer</p></div>
+                    <span class="feature__year">2018</span>
+                  </div>
+                </button>
+                <button class="feature" type="button" data-trailer="321453068" data-film="Keshand">
+                  <img src="assets/Keshand.jpg" alt="Poster for Keshand">
+                  <span class="feature__play" aria-hidden="true">▶</span>
+                  <div class="feature__caption">
+                    <div><h3 class="feature__title">Keshand</h3><p class="mono-meta">Short · Iran · Watch trailer</p></div>
+                    <span class="feature__year">2017</span>
+                  </div>
+                </button>
               </div>
-            </button>
-            <button class="poster" type="button" data-trailer="766239870" data-film="Yellow Line">
-              <img src="assets/yellow line.jpg" alt="Poster for Yellow Line" loading="lazy">
-              <span class="poster__play" aria-hidden="true">▶</span>
-              <div class="poster__meta">
-                <h3 class="poster__title">Yellow Line</h3>
-                <span class="mono-meta">Short · Iran · 2022</span>
+            </div>
+
+            <!-- Thumbnail navigator -->
+            <div class="carousel">
+              <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous posters">‹</button>
+              <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next posters">›</button>
+              <div class="carousel__track" id="poster-track">
+                <button class="poster" type="button" data-film="La Chasse">
+                  <img src="assets/La Chasse.jpg" alt="Poster for La Chasse" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">La Chasse</h3><span class="mono-meta">2026</span></div>
+                </button>
+                <button class="poster" type="button" data-film="Life, a short take">
+                  <img src="assets/Life a Short Take.jpg" alt="Poster for Life, a short take" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">Life, a short take</h3><span class="mono-meta">2023</span></div>
+                </button>
+                <button class="poster" type="button" data-film="Yellow Line">
+                  <img src="assets/yellow line.jpg" alt="Poster for Yellow Line" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">Yellow Line</h3><span class="mono-meta">2022</span></div>
+                </button>
+                <button class="poster" type="button" data-film="You're Still Here">
+                  <img src="assets/you are still here.jpg" alt="Poster for You're Still Here" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">You're Still Here</h3><span class="mono-meta">2019</span></div>
+                </button>
+                <button class="poster" type="button" data-film="Barcelona">
+                  <img src="assets/barcelona.jpg" alt="Poster for Barcelona" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">Barcelona</h3><span class="mono-meta">2018</span></div>
+                </button>
+                <button class="poster" type="button" data-film="Keshand">
+                  <img src="assets/Keshand.jpg" alt="Poster for Keshand" loading="lazy">
+                  <div class="poster__meta"><h3 class="poster__title">Keshand</h3><span class="mono-meta">2017</span></div>
+                </button>
               </div>
-            </button>
-            <button class="poster" type="button" data-trailer="338254113" data-film="You're Still Here">
-              <img src="assets/you are still here.jpg" alt="Poster for You're Still Here" loading="lazy">
-              <span class="poster__play" aria-hidden="true">▶</span>
-              <div class="poster__meta">
-                <h3 class="poster__title">You're Still Here</h3>
-                <span class="mono-meta">Short · Iran · 2019</span>
-              </div>
-            </button>
-            <button class="poster" type="button" data-trailer="794381004" data-film="Barcelona">
-              <img src="assets/barcelona.jpg" alt="Poster for Barcelona" loading="lazy">
-              <span class="poster__play" aria-hidden="true">▶</span>
-              <div class="poster__meta">
-                <h3 class="poster__title">Barcelona</h3>
-                <span class="mono-meta">Short · Iran · 2018</span>
-              </div>
-            </button>
-            <button class="poster" type="button" data-trailer="321453068" data-film="Keshand">
-              <img src="assets/Keshand.jpg" alt="Poster for Keshand" loading="lazy">
-              <span class="poster__play" aria-hidden="true">▶</span>
-              <div class="poster__meta">
-                <h3 class="poster__title">Keshand</h3>
-                <span class="mono-meta">Short · Iran · 2017</span>
-              </div>
-            </button>
             </div>
           </div>
         </div>

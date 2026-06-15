@@ -121,11 +121,60 @@
     update();
   }
 
+  // Gallery: keeps the big stage and the thumbnail navigator in sync.
+  function initGallery() {
+    var stage = document.getElementById("feature-track");
+    var thumbTrack = document.getElementById("poster-track");
+    if (!stage || !thumbTrack) return;
+    var slides = Array.prototype.slice.call(stage.querySelectorAll(".feature"));
+    var thumbs = Array.prototype.slice.call(thumbTrack.querySelectorAll(".poster"));
+    var gallery = stage.closest(".gallery");
+    var prev = gallery.querySelector(".gallery__nav--prev");
+    var next = gallery.querySelector(".gallery__nav--next");
+    var active = -1;
+
+    function setActive(i, scrollStage) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      if (i === active) return;
+      active = i;
+      if (scrollStage) stage.scrollTo({ left: i * stage.clientWidth, behavior: "smooth" });
+      thumbs.forEach(function (t, n) { t.classList.toggle("is-active", n === i); });
+      // Keep the active thumbnail comfortably in view.
+      var thumb = thumbs[i];
+      if (thumb) {
+        var target = thumb.offsetLeft - (thumbTrack.clientWidth - thumb.offsetWidth) / 2;
+        thumbTrack.scrollTo({ left: target, behavior: "smooth" });
+      }
+      if (prev) prev.disabled = i <= 0;
+      if (next) next.disabled = i >= slides.length - 1;
+    }
+
+    if (prev) prev.addEventListener("click", function () { setActive(active - 1, true); });
+    if (next) next.addEventListener("click", function () { setActive(active + 1, true); });
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener("click", function () { setActive(i, true); });
+    });
+
+    // Manual swipe/scroll of the stage updates the active film.
+    var raf;
+    stage.addEventListener("scroll", function () {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = null;
+        setActive(Math.round(stage.scrollLeft / stage.clientWidth), false);
+      });
+    }, { passive: true });
+
+    setActive(0, false);
+  }
+
   function init() {
     initReveal();
     ensureHeroVisible();
     initTrailers();
     initCarousel();
+    initGallery();
   }
 
   if (document.readyState === "loading") {

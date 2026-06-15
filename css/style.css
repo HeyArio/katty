@@ -281,17 +281,53 @@ img { max-width: 100%; }
   margin-bottom: 54px;
 }
 
+/* ---------- Films: gallery stage ---------- */
+.gallery__stage { position: relative; margin-bottom: 18px; }
+.gallery__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 3px;
+  /* hide the stage scrollbar — navigation is via arrows / thumbnails */
+  scrollbar-width: none;
+}
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 52px; height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(11, 10, 9, 0.7);
+  backdrop-filter: blur(2px);
+  color: var(--ink);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+.gallery__nav:hover { background: var(--ember); border-color: var(--ember); color: var(--bg); }
+.gallery__nav:disabled { opacity: 0; pointer-events: none; }
+.gallery__nav--prev { left: 18px; }
+.gallery__nav--next { right: 18px; }
+
 /* ---------- Films: featured ---------- */
 .feature {
   text-decoration: none;
   color: inherit;
   display: block;
   position: relative;
-  width: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   aspect-ratio: 16 / 8;
-  border-radius: 3px;
   overflow: hidden;
-  margin: 0 0 40px;
+  margin: 0;
   padding: 0;
   border: 1px solid var(--line);
   background: var(--bg2);
@@ -419,7 +455,12 @@ img { max-width: 100%; }
   text-align: left;
   transition: border-color 0.4s ease, transform 0.4s ease;
 }
-.poster:hover { border-color: rgba(200, 100, 58, 0.5); transform: translateY(-4px); }
+.poster {
+  opacity: 0.5;
+  transition: border-color 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+}
+.poster:hover { border-color: rgba(200, 100, 58, 0.5); transform: translateY(-4px); opacity: 1; }
+.poster.is-active { opacity: 1; border-color: var(--ember); }
 .poster img {
   display: block;
   width: 100%;
