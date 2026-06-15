@@ -83,7 +83,7 @@
 
           <!-- Featured -->
           <button class="feature" type="button" data-reveal data-trailer="1160206129" data-film="La Chasse">
-            <img src="assets/La Chasse.png" alt="Poster for La Chasse">
+            <img src="assets/La Chasse.jpg" alt="Poster for La Chasse">
             <span class="feature__tag">Latest</span>
             <span class="feature__play" aria-hidden="true">▶</span>
             <div class="feature__caption">
@@ -95,9 +95,12 @@
             </div>
           </button>
 
-          <!-- Poster grid -->
-          <div class="posters">
-            <button class="poster" type="button" data-reveal data-trailer="794562272" data-film="Life, a short take">
+          <!-- Poster carousel -->
+          <div class="carousel" data-reveal>
+            <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous posters">‹</button>
+            <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next posters">›</button>
+            <div class="carousel__track" id="poster-track">
+            <button class="poster" type="button" data-trailer="794562272" data-film="Life, a short take">
               <img src="assets/Life a Short Take.jpg" alt="Poster for Life, a short take" loading="lazy">
               <span class="poster__play" aria-hidden="true">▶</span>
               <div class="poster__meta">
@@ -105,15 +108,15 @@
                 <span class="mono-meta">Short · Iran · 2023</span>
               </div>
             </button>
-            <button class="poster" type="button" data-reveal data-trailer="766239870" data-film="Yellow Line">
-              <img src="assets/yellow line.png" alt="Poster for Yellow Line" loading="lazy">
+            <button class="poster" type="button" data-trailer="766239870" data-film="Yellow Line">
+              <img src="assets/yellow line.jpg" alt="Poster for Yellow Line" loading="lazy">
               <span class="poster__play" aria-hidden="true">▶</span>
               <div class="poster__meta">
                 <h3 class="poster__title">Yellow Line</h3>
                 <span class="mono-meta">Short · Iran · 2022</span>
               </div>
             </button>
-            <button class="poster" type="button" data-reveal data-trailer="338254113" data-film="You're Still Here">
+            <button class="poster" type="button" data-trailer="338254113" data-film="You're Still Here">
               <img src="assets/you are still here.jpg" alt="Poster for You're Still Here" loading="lazy">
               <span class="poster__play" aria-hidden="true">▶</span>
               <div class="poster__meta">
@@ -121,7 +124,7 @@
                 <span class="mono-meta">Short · Iran · 2019</span>
               </div>
             </button>
-            <button class="poster" type="button" data-reveal data-trailer="794381004" data-film="Barcelona">
+            <button class="poster" type="button" data-trailer="794381004" data-film="Barcelona">
               <img src="assets/barcelona.jpg" alt="Poster for Barcelona" loading="lazy">
               <span class="poster__play" aria-hidden="true">▶</span>
               <div class="poster__meta">
@@ -129,14 +132,15 @@
                 <span class="mono-meta">Short · Iran · 2018</span>
               </div>
             </button>
-            <button class="poster" type="button" data-reveal data-trailer="321453068" data-film="Keshand">
-              <img src="assets/Keshand.png" alt="Poster for Keshand" loading="lazy">
+            <button class="poster" type="button" data-trailer="321453068" data-film="Keshand">
+              <img src="assets/Keshand.jpg" alt="Poster for Keshand" loading="lazy">
               <span class="poster__play" aria-hidden="true">▶</span>
               <div class="poster__meta">
                 <h3 class="poster__title">Keshand</h3>
                 <span class="mono-meta">Short · Iran · 2017</span>
               </div>
             </button>
+            </div>
           </div>
         </div>
       </section>

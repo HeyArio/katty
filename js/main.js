@@ -95,10 +95,37 @@
     });
   }
 
+  // Poster carousel: prev/next arrows scroll the track by one card.
+  function initCarousel() {
+    var track = document.getElementById("poster-track");
+    if (!track) return;
+    var carousel = track.closest(".carousel");
+    var prev = carousel.querySelector(".carousel__nav--prev");
+    var next = carousel.querySelector(".carousel__nav--next");
+
+    function step() {
+      var card = track.querySelector(".poster");
+      var gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 20, 10) || 20;
+      return card ? card.offsetWidth + gap : track.clientWidth * 0.8;
+    }
+    function update() {
+      var maxScroll = track.scrollWidth - track.clientWidth - 1;
+      prev.disabled = track.scrollLeft <= 0;
+      next.disabled = track.scrollLeft >= maxScroll;
+    }
+
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
   function init() {
     initReveal();
     ensureHeroVisible();
     initTrailers();
+    initCarousel();
   }
 
   if (document.readyState === "loading") {
