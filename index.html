@@ -82,46 +82,62 @@
           </div>
 
           <!-- Featured -->
-          <a class="feature" href="#gallery" data-reveal>
-            <img src="assets/lachasse-dinner.jpg" alt="Still from La Chasse">
+          <button class="feature" type="button" data-reveal data-trailer="1160206129" data-film="La Chasse">
+            <img src="assets/La Chasse.png" alt="Poster for La Chasse">
             <span class="feature__tag">Latest</span>
+            <span class="feature__play" aria-hidden="true">▶</span>
             <div class="feature__caption">
               <div>
                 <h3 class="feature__title">La Chasse</h3>
-                <p class="mono-meta">Director · France</p>
+                <p class="mono-meta">Director · France · Watch trailer</p>
               </div>
               <span class="feature__year">2026</span>
             </div>
-          </a>
+          </button>
 
-          <!-- Index of the rest -->
-          <ul class="filmlist">
-            <li class="filmlist__row">
-              <span class="filmlist__num">02</span>
-              <div class="filmlist__main"><h3>Life, a short take</h3><span class="mono-meta">Short · Iran</span></div>
-              <span class="filmlist__year">2023</span>
-            </li>
-            <li class="filmlist__row">
-              <span class="filmlist__num">03</span>
-              <div class="filmlist__main"><h3>Yellow Line</h3><span class="mono-meta">Short · Iran</span></div>
-              <span class="filmlist__year">2022</span>
-            </li>
-            <li class="filmlist__row">
-              <span class="filmlist__num">04</span>
-              <div class="filmlist__main"><h3>You're Still Here</h3><span class="mono-meta">Short · Iran</span></div>
-              <span class="filmlist__year">2019</span>
-            </li>
-            <li class="filmlist__row">
-              <span class="filmlist__num">05</span>
-              <div class="filmlist__main"><h3>Barcelona</h3><span class="mono-meta">Short · Iran</span></div>
-              <span class="filmlist__year">2018</span>
-            </li>
-            <li class="filmlist__row">
-              <span class="filmlist__num">06</span>
-              <div class="filmlist__main"><h3>Keshand</h3><span class="mono-meta">Short · Iran</span></div>
-              <span class="filmlist__year">2017</span>
-            </li>
-          </ul>
+          <!-- Poster grid -->
+          <div class="posters">
+            <button class="poster" type="button" data-reveal data-trailer="794562272" data-film="Life, a short take">
+              <img src="assets/Life a Short Take.jpg" alt="Poster for Life, a short take" loading="lazy">
+              <span class="poster__play" aria-hidden="true">▶</span>
+              <div class="poster__meta">
+                <h3 class="poster__title">Life, a short take</h3>
+                <span class="mono-meta">Short · Iran · 2023</span>
+              </div>
+            </button>
+            <button class="poster" type="button" data-reveal data-trailer="766239870" data-film="Yellow Line">
+              <img src="assets/yellow line.png" alt="Poster for Yellow Line" loading="lazy">
+              <span class="poster__play" aria-hidden="true">▶</span>
+              <div class="poster__meta">
+                <h3 class="poster__title">Yellow Line</h3>
+                <span class="mono-meta">Short · Iran · 2022</span>
+              </div>
+            </button>
+            <button class="poster" type="button" data-reveal data-trailer="338254113" data-film="You're Still Here">
+              <img src="assets/you are still here.jpg" alt="Poster for You're Still Here" loading="lazy">
+              <span class="poster__play" aria-hidden="true">▶</span>
+              <div class="poster__meta">
+                <h3 class="poster__title">You're Still Here</h3>
+                <span class="mono-meta">Short · Iran · 2019</span>
+              </div>
+            </button>
+            <button class="poster" type="button" data-reveal data-trailer="794381004" data-film="Barcelona">
+              <img src="assets/barcelona.jpg" alt="Poster for Barcelona" loading="lazy">
+              <span class="poster__play" aria-hidden="true">▶</span>
+              <div class="poster__meta">
+                <h3 class="poster__title">Barcelona</h3>
+                <span class="mono-meta">Short · Iran · 2018</span>
+              </div>
+            </button>
+            <button class="poster" type="button" data-reveal data-trailer="321453068" data-film="Keshand">
+              <img src="assets/Keshand.png" alt="Poster for Keshand" loading="lazy">
+              <span class="poster__play" aria-hidden="true">▶</span>
+              <div class="poster__meta">
+                <h3 class="poster__title">Keshand</h3>
+                <span class="mono-meta">Short · Iran · 2017</span>
+              </div>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -253,6 +269,18 @@
         </footer>
       </section>
     </main>
+  </div>
+
+  <!-- ============ TRAILER MODAL ============ -->
+  <div class="trailer" id="trailer" role="dialog" aria-modal="true" aria-label="Film trailer" hidden>
+    <div class="trailer__backdrop" data-close></div>
+    <div class="trailer__inner">
+      <div class="trailer__bar">
+        <span class="trailer__title mono-meta" id="trailer-title"></span>
+        <button class="trailer__close" type="button" data-close aria-label="Close trailer">✕</button>
+      </div>
+      <div class="trailer__frame" id="trailer-frame"></div>
+    </div>
   </div>
 </body>
 </html>

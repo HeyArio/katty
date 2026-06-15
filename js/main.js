@@ -53,9 +53,52 @@
     }, 2400);
   }
 
+  // Trailer modal: opens a Vimeo player for any element with [data-trailer].
+  function initTrailers() {
+    var modal = document.getElementById("trailer");
+    if (!modal) return;
+    var frame = document.getElementById("trailer-frame");
+    var title = document.getElementById("trailer-title");
+    var lastFocused = null;
+
+    function open(id, name) {
+      lastFocused = document.activeElement;
+      title.textContent = name || "Trailer";
+      frame.innerHTML =
+        '<iframe src="https://player.vimeo.com/video/' + id +
+        '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      var closeBtn = modal.querySelector(".trailer__close");
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      modal.hidden = true;
+      frame.innerHTML = "";
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    document.querySelectorAll("[data-trailer]").forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        open(trigger.getAttribute("data-trailer"), trigger.getAttribute("data-film"));
+      });
+    });
+
+    modal.querySelectorAll("[data-close]").forEach(function (el) {
+      el.addEventListener("click", close);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) close();
+    });
+  }
+
   function init() {
     initReveal();
     ensureHeroVisible();
+    initTrailers();
   }
 
   if (document.readyState === "loading") {
