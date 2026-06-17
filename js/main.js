@@ -61,12 +61,21 @@
     var title = document.getElementById("trailer-title");
     var lastFocused = null;
 
+    // Mobile browsers block autoplay of videos with sound, so the embed
+    // would otherwise sit on a dead black frame. On touch devices we load
+    // the player muted + inline so it reliably starts; viewers can unmute
+    // from the Vimeo controls. Desktop keeps sound on, as before.
+    var isTouch = window.matchMedia &&
+      window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
     function open(id, name) {
       lastFocused = document.activeElement;
       title.textContent = name || "Trailer";
+      var params = "autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" +
+        (isTouch ? "&muted=1" : "");
       frame.innerHTML =
-        '<iframe src="https://player.vimeo.com/video/' + id +
-        '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        '<iframe src="https://player.vimeo.com/video/' + id + "?" + params +
+        '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen playsinline></iframe>';
       modal.hidden = false;
       document.body.style.overflow = "hidden";
       var closeBtn = modal.querySelector(".trailer__close");
