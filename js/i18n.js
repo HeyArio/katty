@@ -125,6 +125,7 @@
     "contact.location": { en: "Ivry-sur-Seine · Paris", fr: "Ivry-sur-Seine · Paris" },
     "footer.role": { en: "Katayoun Parmar — Cinéaste", fr: "Katayoun Parmar — Cinéaste" },
     "footer.copy": { en: "© 2026 · Paris / Tehran", fr: "© 2026 · Paris / Téhéran" },
+    "footer.powered": { en: "Powered by", fr: "Propulsé par" },
 
     /* Aria labels */
     "aria.prevfilm":    { en: "Previous film", fr: "Film précédent" },

@@ -730,6 +730,16 @@ img { max-width: 100%; }
   text-transform: uppercase;
   color: var(--faint);
 }
+.footer__credit a {
+  color: var(--faint);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer__credit a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ember);
+}
 
 /* ---------- Trailer modal ---------- */
 .trailer {
